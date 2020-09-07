@@ -29,21 +29,19 @@ public class App {
         List<String> fantasyCities = Arrays.asList("Baldur's Gate", "Athkatla", "Neverwinter", "Luskan", "Waterdeep");
         lineWriter(new File("src/main/java/org/example/destination/fantasyCities.txt"), fantasyCities);
         List<String> copy = lineReader(new File("src/main/java/org/example/destination/fantasyCities.txt"));
-        System.out.println("--- Testing lineWriter: ---");
-        System.out.println("Original: ");
+        System.out.println("--- Testing lineWriter: ---\nOriginal:");
         fantasyCities.forEach(System.out::println);
-        System.out.println();
-        System.out.println("Copy: ");
+        System.out.println("\nCopy: ");
         copy.forEach(System.out::println);
 
         System.out.println("---------------------------------------");
 
         // 4. Testing streamCopy
-        streamCopy(new File("src/main/java/org/example/source/pricken.jpg"),
-                new File("src/main/java/org/example/destination/copy_pricken.jpg"));
+        streamCopy(new File("src/main/java/org/example/source/pricken.png"),
+                new File("src/main/java/org/example/destination/copy_pricken.png"));
         System.out.println("--- Testing streamCopy: ---");
-        if (stringReader(new File("src/main/java/org/example/destination/copy_pricken.jpg"))
-                .contains(stringReader(new File("src/main/java/org/example/source/pricken.jpg")))) {
+        if (stringReader(new File("src/main/java/org/example/destination/copy_pricken.png"))
+                .contains(stringReader(new File("src/main/java/org/example/source/pricken.png")))) {
             System.out.println("Oh meow god, you managed to copy my cat!");
         } else {
             System.out.println("My cat was too pretty to be copied.");
